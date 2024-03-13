@@ -1,10 +1,14 @@
 import React, { useRef, useState } from 'react';
 import Header from './Header'
 import { checkValidData } from "../utils/validate";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -18,8 +22,40 @@ const Login = () => {
     // validate the form data
     const message = checkValidData(name?.current?.value, email.current.value, password.current.value);
     setErrorMessage(message);
-
+    if(message) return;
     // Sign In / Sign Up
+    if(isSignInForm) {
+      // sign in logic
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user, "USER")
+        navigate("/");
+        // ...
+      })
+      .catch((error) => {
+        console.log(error)
+        const errorCode = error.code;
+        const errorMsg = error.message;
+        setErrorMessage(errorMsg.includes('invalid-credential') ? 'Invalid Credential' : errorMsg);
+      });
+    } else {
+      // sign up logic
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          navigate("/browse");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMsg = error.message;
+          setErrorMessage(errorCode + "-" + errorMsg);
+          // ..
+        });
+    }
   };
 
   return (

@@ -10,6 +10,9 @@
 - Firebase setup
 - Deploying our App to production
 - Create SignUp User Account
+- Implement Sign In user API
+- Created Redux store with userSlice
+- 
 
 # Features
 - Login/Sign up
@@ -41,5 +44,5 @@ Step 5 : Type Set-ExecutionPolicy Unrestricted -Force and hit Enter.
 - Deploy to hosting:-
   - firebase login
   - firebase init
-  - create npm run build and then
+  - create "npm run build" and then
   - firebase deploy

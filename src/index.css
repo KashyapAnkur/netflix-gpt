@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.user-profile-dropdown {
+    position: absolute;
+    right: 10px;
+    top: 70px;
+}
+
+.user-profile-dropdown li {
+    background-color: black;
+    color: white;
+    width: 200px;
+    top: 100px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+
+.user-profile-dropdown li:hover {
+    background-color: antiquewhite;
+    color: black;
+}

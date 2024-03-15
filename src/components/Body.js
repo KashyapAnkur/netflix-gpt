@@ -3,10 +3,9 @@ import Login from "../components/Login";
 import Browse from "../components/Browse";
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from 'firebase/auth';
-import { user } from 'firebase-functions/v1/auth';
-import { auth } from 'firebase-admin';
 import { useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
+import { auth } from '../utils/firebase';
 
 const Body = () => {
     const dispatch = useDispatch();

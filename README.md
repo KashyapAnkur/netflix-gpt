@@ -17,6 +17,21 @@
 - Validation done
 - Redux done
 - Auth done
+- Bug fix: Sign up user displayName and profile picture update
+- Bug fix: if the user is not logged in, Redirect /browse to Login page and vice versa
+- Unsubscribed to the onAuthStateChange callback
+- Added hardcoded values to the constants file
+- Register TMDB API & create an app and get access token
+- Get Data from TMDB now playing movies list API
+- Custom hook for Now Playing movies
+- Create movieSlice
+- Update store with movies data
+- Planning for MainContainer and secondary container
+- Fetch data for trailer video
+- Update store with trailer video data
+- Embedded the youtube video and make it autoplay and mute
+- Tailwind classes to make main container look awesome
+
 
 # Features
 - Login/Sign up

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    overflow-x: hidden;
+}
+
 .user-profile-dropdown {
     position: absolute;
     right: 10px;

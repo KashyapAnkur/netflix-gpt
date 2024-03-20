@@ -3,14 +3,17 @@ import Header from './Header'
 import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { LOGIN_BACKGROUND, userAvatar } from '../utils/constants';
+import Loader from './Loader';
+import { setLoader } from "../utils/configSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const dispatch = useDispatch();
+  const { loader }  = useSelector(store => store.config);
 
   const name = useRef(null);
   const email = useRef(null);
@@ -21,6 +24,7 @@ const Login = () => {
   };
 
   const handleButtonClick = () => {
+    dispatch(setLoader());
     const message = checkValidData(name?.current?.value, email.current.value, password.current.value);
     setErrorMessage(message);
     if(message) return;
@@ -32,6 +36,7 @@ const Login = () => {
           displayName: "", photoURL: userAvatar
         })
           .then(() => {
+            dispatch(setLoader());
           })
           .catch((error) => {
             setErrorMessage(error);
@@ -93,7 +98,15 @@ const Login = () => {
             className="p-2 my-4 bg-red-700 w-full rounded-lg"
             onClick={handleButtonClick}
           >
-            { isSignInForm ? "Sign In" : "Sign Up" }
+            {isSignInForm ? (
+              
+                loader ? <Loader /> : "Sign In"
+              
+            ) : (
+              <>
+                "Sign Up"
+              </>
+            )}
           </button>
           <p className="py-4 font-thin text-xs cursor-pointer"
             onClick={toggleSigninForm}

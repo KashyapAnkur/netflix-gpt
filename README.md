@@ -39,6 +39,9 @@
 - Create usePopularMovies, useUpcomingMovies and useTopRatedMovies custom hooks for fetching the related movies
 - Added UserDropdownobject in already created UserDropdown component
 - GPT Search Feature
+- GPT Search Bar
+- Multi language feature
+- Integrate GPT APIs
 
 # Features
 - Login/Sign up

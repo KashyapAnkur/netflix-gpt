@@ -14,3 +14,18 @@ export const TMDB_POPULAR_MOVIES = "https://api.themoviedb.org/3/movie/popular?p
 export const TMDB_TOP_RATED_MOVIES = "https://api.themoviedb.org/3/movie/top_rated?page=1";
 export const TMDB_UPCOMING_MOVIES = "https://api.themoviedb.org/3/movie/upcoming?page=1";
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w780/";
+export const LOGIN_BACKGROUND = "https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4cca-bf45-ac52e0a052c0/IN-en-20240226-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+export const SUPPORTED_LANGUAGES = [
+    {
+        identifier: "en",
+        name: "English"
+    },
+    {
+        identifier: "hindi",
+        name: "Hindi"
+    },
+    {
+        identifier: "spanish",
+        name: "Spanish"
+    }
+]

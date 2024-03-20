@@ -32,6 +32,13 @@
 - Embedded the youtube video and make it autoplay and mute
 - Tailwind classes to make main container look awesome
 - Build secondary component
+- Built movie list
+- Built movie card
+- Added TMDB image cdn url
+- Made the UI look better(browse page with Tailwind CSS)-
+- Create usePopularMovies, useUpcomingMovies and useTopRatedMovies custom hooks for fetching the related movies
+- Added UserDropdownobject in already created UserDropdown component
+- GPT Search Feature
 
 # Features
 - Login/Sign up

@@ -43,7 +43,6 @@
 - Multi language feature
 - Integrate GPT APIs
 - Installed openai package:- npm install --save openai
-- REACT_APP_OPEN_AI_KEY = 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
     - Here it is mandatory to add REACT_APP to OPEN_AI_KEY
 # Features
 - Login/Sign up

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { SUPPORTED_LANGUAGES, headerLogo } from '../utils/constants';
-import { toggleGptSearchView } from '../utils/gptSlice';
+import { clearGpt, toggleGptSearchView } from '../utils/gptSlice';
 import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
@@ -22,6 +22,7 @@ const Header = () => {
 
   const handleGptSearch = () => {
     dispatch(toggleGptSearchView());
+    dispatch(clearGpt());
   };
 
   const handleLanguageChange = (e) => {

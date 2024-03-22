@@ -44,6 +44,16 @@
 - Integrate GPT APIs
 - Installed openai package:- npm install --save openai
     - Here it is mandatory to add REACT_APP to OPEN_AI_KEY
+- Get Gpt Search Open API key
+- Gpt Search API call(commented the code because of paid version)
+- Memoization
+- Fetched Gpt Movie suggestions from TMDB
+- Created Gpt Slice and added data
+- Re-used MovieList component to make movie suggestion container
+- Added .env file
+- Added .env file to .gitignore
+- Made our site responsive
+
 # Features
 - Login/Sign up
     - Sign IN/Sign Up Form
